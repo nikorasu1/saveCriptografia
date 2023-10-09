@@ -1,0 +1,37 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Criptografia</title>
+    <script lang="JavaScript">
+        function criptografar()
+        {
+            var str, str2, i, codAtual, codNovo;
+
+            str = document.frm.txtCarac.value.toUpperCase();
+            str2= "";
+
+            for(i=0; i<str.length;++i)
+            {
+                codAtual = str.charCodeAt(i);
+                codNovo = codAtual + i;
+                str2 += String.fromCharCode(codNovo);
+                //document.write(str.charCodeAt(i));
+                //document.write("<br>");
+            }
+            document.write(str2);
+            document.write("<br>");
+
+        }
+    </script>
+
+</head>
+<body>
+    <center>
+            <form name="frm">
+                String: <input type="text" name="txtCarac" value="abc"><br>
+    
+                <input type="button" value="OK" onclick="criptografar()">
+            </form>
+    </center>
+</body>
+</html>
